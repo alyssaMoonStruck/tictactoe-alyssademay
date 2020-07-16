@@ -1,4 +1,11 @@
-
+A wireframe of what your game project will look like.
+How you will represent the game board in JS.
+How you plan to approach this project.
+4-8 user stories for your game project (using the As a < type of user >, I want < some goal > so that < some reason >. format from the readings).
+How you plan to keep your code modular.
+What creative spin will you add to your project?
+How will you use version control to backup / track your project?
+What additional features will you build if you have extra time?
 
 1) [Wireframe](./wireframe.png) 
 

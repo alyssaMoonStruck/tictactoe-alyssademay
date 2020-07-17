@@ -24,7 +24,7 @@
 
   "sass": {
     "all": [
-      "assets/styles/**/*.scss"
+      "assets/styles/**/*.sass"
     ]
   }
 }

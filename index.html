@@ -12,36 +12,55 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Browser Template</h1>
-  
-  <div id="unauthenticated">
-    <form id="sign-up">
-      <input name="credentials[email]" placeholder="Email" type="text">
-      <input name="credentials[password]" placeholder="Password" type="password">
-      <input name="credentials[password_confirmation]" placeholder="Confirm Password" type="password">
-      <button type="submit">Sign Up</button>
-    </form>
+      <header>
+        <h1>Tic-Tac-Toe</h1>
+        <sup >-By Alyssa</sup>
+        <p id="message"></p>
+      </header>
 
-    <form id="sign-in">
-      <input name="credentials[email]" placeholder="Email" type="text">
-      <input name="credentials[password]" placeholder="Password" type="password">
-      <button type="submit">Sign In</button>
-    </form>
-  </div>
+      <div id="unauthenticated">
+        
+          <form id="sign-up">
+            <input name="credentials[email]" placeholder="Email" type="text">
+            <input name="credentials[password]" placeholder="Password" type="password">
+            <input name="credentials[password_confirmation]" placeholder="Confirm Password" type="password">
+            <button type="submit">Sign Up</button>
+          </form>
+        
 
-  <div id="authenticated">
-    <form id="change-password">
-      <input name="passwords[old]" placeholder="Old Password" type="password">
-      <input name="passwords[new]" placeholder="New Password" type="password">
-      <button type="submit">Change Password</button>
-    </form>
+        <form id="sign-in">
+          <input name="credentials[email]" placeholder="Email" type="text">
+          <input name="credentials[password]" placeholder="Password" type="password">
+          <button type="submit">Sign In</button>
+        </form>
+</div>
+    
 
-    <form id="sign-out">
-      <button type="submit">Sign Out</button>
-    </form>
-  </div>
+<div id="game" class="game">
+  <div id="b1" class="col-4 col-md-4">1</div>
+  <div id="b2" class="col-4 col-md-4">2</div>
+  <div id="b3" class="col-4 col-md-4">3</div>
+  <div id="b4" class="col-4 col-md-4">4</div>
+  <div id="b5" class="col-4 col-md-4">5</div>
+  <div id="b6" class="col-4 col-md-4">6</div>
+  <div id="b7" class="col-4 col-md-4">7</div>
+  <div id="b8" class="col-4 col-md-4">8</div>
+  <div id="b9" class="col-4 col-md-4">9</div>
+</div>
+      
 
+      <div id="authenticated">
 
-    </form>
+        <form id="change-password">
+          <input name="passwords[old]" placeholder="Old Password" type="password">
+          <input name="passwords[new]" placeholder="New Password" type="password">
+          <button type="submit">Change Password</button>
+        </form>
+
+        <form id="sign-out">
+          <button type="click">Sign Out</button>
+        </form>
+
+      </div>
     </body>
 </html>

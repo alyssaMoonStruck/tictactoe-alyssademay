@@ -1,1 +1,67 @@
 @import '~bootstrap/scss/bootstrap';
+
+$grey: #666;
+
+
+sup{
+    font-style: italic;
+    font-weight: 100 ;
+    color: white;
+}
+
+header{
+    text-align: center;
+    width: 100%;
+    background-color: $grey;
+}
+
+#unauthenticated{
+    margin: auto;
+    width: fit-content;
+    text-align: center;
+
+}
+
+.game {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    padding: 0;
+    list-style: none;
+    margin: auto;
+    width: 40%;
+    margin-bottom: 40px;
+    div{
+        border: solid black 1px;
+        padding: 5px;
+        width: 200px;
+        height: 150px;
+        margin-top: 10px;
+        line-height: 200px;
+        color: pink;
+        font-weight: bold;
+        font-size: 3em;
+        text-align: center;
+        flex: 1 40%;
+        flex-grow: 15;
+        
+        }
+
+}
+
+#authenticated {
+    border: solid black 1px;
+    text-align: center;
+    background-color: $grey;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 100px;
+    width: 100%;
+    overflow: hidden;
+}
+
+
+
+
+

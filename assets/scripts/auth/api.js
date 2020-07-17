@@ -4,15 +4,19 @@ const config  = require('../config')
 const store = require('../store')
 
 
-const signUp =function (formInfo) {
+const signUp = function (formData) {
     return $.ajax({
         url: config.apiUrl + '/sign-up',
         method: 'POST',
-        data: formInfo
+        data: formData
     })
-}
+}  
 
-const signIn =function (formInfo) {
+const signIn = function (formInfo) {
+
+    //return fetch(config.apiUrl + '/sign-in', {method:"POST", body: JSON.parse(formInfo) });
+
+
     return $.ajax({
         url: config.apiUrl + '/sign-in',
         method: 'POST',
@@ -34,7 +38,7 @@ const changePassword = function (formInfo) {
 const signOut = function () {
     return $.ajax({
         headers: {
-            Authorization: 'Bearer ' + token
+            Authorization: 'Bearer ' + store.user.token
         },
         url: config.apiUrl + '/sign-out',
         method: 'DELETE'

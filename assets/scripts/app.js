@@ -5,37 +5,44 @@
 
 // use require without a reference to ensure a file is bundled
 // require('./example')
-const gameEvents = require('./auth/events')
-
+const authEvents = require('./auth/events')
+const gameEvents = require('./game/events')
+const store = require('./store')
+store.choosen = []
 
 $(() => {
   //set up ui
-  // $('#authenticated').hide()
-  // $('#game').hide()
+  $('#authenticated').hide()
+  $('#game').hide()
+  // $('#new-game').hide()
+  $('#start-game').hide()
+
+  //Grab every button, asign it to a click, and put that into the function we put into events,
+  //then add the number of the box.
+    $("#b1").click(gameEvents.playerChoose)
+    $("#b2").click(gameEvents.playerChoose)
+    $("#b3").click(gameEvents.playerChoose)
+    $("#b4").click(gameEvents.playerChoose)
+    $("#b5").click(gameEvents.playerChoose)
+    $("#b6").click(gameEvents.playerChoose)
+    $("#b7").click(gameEvents.playerChoose)
+    $("#b8").click(gameEvents.playerChoose)
+    $("#b9").click(gameEvents.playerChoose)
 
   // set event listeners
-  $('#sign-up').on('submit', gameEvents.onSignUp)
-  $('#sign-in').on('submit', gameEvents.onSignIn)
-  $('#change-password').on('submit', gameEvents.onChangePassword)
-  $('#sign-out').on('click', gameEvents.onSignOut)
+  $('#sign-up').on('submit', authEvents.onSignUp)
+  $('#sign-in').on('submit', authEvents.onSignIn)
+  $('#change-password').on('submit', authEvents.onChangePassword)
+  $('#sign-out').on('click', authEvents.onSignOut)
 
+  // $('#new-game').click(gameEvents.newGame)
 
 // select all boxes inside your flex container
 // and make them listen to your game.event function
 
 })
 
-// 1 hide other divs / Pages
-  //* Sign Up 
-  //* Authenticated
-
-//2 make the flex box container with 9 divs things. To google:
-  // https://css-tricks.com/snippets/css/a-guide-to-flexbox/
-  //  Papa div should know that there will be rows and columns of 3 * 3,
-  //  not too sure how to set this
-
-//3 "player choose a thing" funciton in events.js
-  // if ID choosen is not in store."Choosen"
+//3
     //store it 
     //if store.choosen %2 == 1
       // mark the div as "x" class // Jquery.addclass https://www.w3schools.com/jquery/jquery_css_classes.asp

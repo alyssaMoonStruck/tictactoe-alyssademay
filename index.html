@@ -1,66 +1,78 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <title>Tic Tac Toad</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `link` tags-->
-      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<head>
+  <title>Tic Tac Toe</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `script` tags-->
-      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
-      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-    </head>
-    <body>
-      <header>
-        <h1>Tic-Tac-Toe</h1>
-        <sup >-By Alyssa</sup>
-        <p id="message"></p>
-      </header>
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
-      <div id="unauthenticated">
-        
-          <form id="sign-up">
-            <input name="credentials[email]" placeholder="Email" type="text">
-            <input name="credentials[password]" placeholder="Password" type="password">
-            <input name="credentials[password_confirmation]" placeholder="Confirm Password" type="password">
-            <button type="submit">Sign Up</button>
-          </form>
-        
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
 
-        <form id="sign-in">
-          <input name="credentials[email]" placeholder="Email" type="text">
-          <input name="credentials[password]" placeholder="Password" type="password">
-          <button type="submit">Sign In</button>
-        </form>
-</div>
-    
+<body>
+  <header>
+    <h1>Tic-Tac-Toe</h1>
+    <sup>-By Alyssa</sup>
+  </header>
 
-<div id="game" class="game">
-  <div id="b1" class="col-4 col-md-4">1</div>
-  <div id="b2" class="col-4 col-md-4">2</div>
-  <div id="b3" class="col-4 col-md-4">3</div>
-  <div id="b4" class="col-4 col-md-4">4</div>
-  <div id="b5" class="col-4 col-md-4">5</div>
-  <div id="b6" class="col-4 col-md-4">6</div>
-  <div id="b7" class="col-4 col-md-4">7</div>
-  <div id="b8" class="col-4 col-md-4">8</div>
-  <div id="b9" class="col-4 col-md-4">9</div>
-</div>
-      
+  <div id="unauthenticated">
 
-      <div id="authenticated">
+    <form id="sign-up">
+      <input name="credentials[email]" placeholder="Email" type="text">
+      <input name="credentials[password]" placeholder="Password" type="password">
+      <input name="credentials[password_confirmation]" placeholder="Confirm Password" type="password">
+      <button type="submit">Sign Up</button>
+    </form>
 
-        <form id="change-password">
-          <input name="passwords[old]" placeholder="Old Password" type="password">
-          <input name="passwords[new]" placeholder="New Password" type="password">
-          <button type="submit">Change Password</button>
-        </form>
 
-        <form id="sign-out">
-          <button type="click">Sign Out</button>
-        </form>
+    <form id="sign-in">
+      <input name="credentials[email]" placeholder="Email" type="text">
+      <input name="credentials[password]" placeholder="Password" type="password">
+      <button type="submit">Sign In</button>
+    </form>
+  </div>
 
-      </div>
-    </body>
+  <div id="start-game">
+    <button id="button" type="click">Start Game</button>
+  </div>
+
+  <div id="authenticated">
+    <p id="message"></p>
+    <div id="game" class="game">
+      <div id="b1" class="col-4 col-md-4">1</div>
+      <div id="b2" class="col-4 col-md-4">2</div>
+      <div id="b3" class="col-4 col-md-4">3</div>
+      <div id="b4" class="col-4 col-md-4">4</div>
+      <div id="b5" class="col-4 col-md-4">5</div>
+      <div id="b6" class="col-4 col-md-4">6</div>
+      <div id="b7" class="col-4 col-md-4">7</div>
+      <div id="b8" class="col-4 col-md-4">8</div>
+      <div id="b9" class="col-4 col-md-4">9</div>
+    </div>
+
+    <div id="new-game">
+      <button id="button1" type="click">Play New Game</button>
+    </div>
+
+    <footer >
+      <form id="change-password">
+        <input name="passwords[old]" placeholder="Old Password" type="password">
+        <input name="passwords[new]" placeholder="New Password" type="password">
+        <button type="submit">Change Password</button>
+      </form>
+
+      <form id="sign-out">
+        <button type="click">Sign Out</button>
+      </form>
+
+    </footer>
+  </div>
+
+
+</body>
+
 </html>

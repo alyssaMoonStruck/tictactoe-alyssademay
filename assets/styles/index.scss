@@ -1,6 +1,6 @@
 @import '~bootstrap/scss/bootstrap';
 
-$grey: #666;
+$grey: #333;
 
 
 sup{
@@ -12,7 +12,8 @@ sup{
 header{
     text-align: center;
     width: 100%;
-    background-color: $grey;
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(147,21,130,1) 
+    30%, rgba(212,168,204,0.49855907780979825) 100%);
 }
 
 #unauthenticated{
@@ -36,7 +37,7 @@ header{
         padding: 5px;
         width: 200px;
         height: 150px;
-        margin-top: 10px;
+        margin-top: 0px;
         line-height: 200px;
         color: pink;
         font-weight: bold;
@@ -50,9 +51,22 @@ header{
 }
 
 #authenticated {
+    text-align: center;
+}
+
+#unauthenticated {
+    direction: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30%;
+    
+}
+
+footer {
     border: solid black 1px;
     text-align: center;
-    background-color: $grey;
+    background: linear-gradient(90deg, rgba(212,168,204,0.49855907780979825) 0%, rgba(147,21,130,1) 
+    30%, rgba(2,0,36,1) 100%);
     position: absolute;
     left: 0;
     bottom: 0;
@@ -65,3 +79,14 @@ header{
 
 
 
+
+
+.x {
+    background: linear-gradient(90deg, rgba(236,168,236,1) 0%, rgba(212,168,204,0.49855907780979825) 
+    2%, rgba(156,111,168,0.2334293948126801) 49%, rgba(2,0,36,1) 100%);
+}
+
+.O {
+    background: linear-gradient(90deg, rgba(236,168,236,1) 0%, rgba(212,168,204,0.49855907780979825) 
+    2%, rgba(156,111,168,0.2334293948126801) 49%, rgba(2,0,36,1) 100%);
+}

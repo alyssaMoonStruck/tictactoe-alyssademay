@@ -14,11 +14,13 @@ $(() => {
   //set up ui
   $('#authenticated').hide()
   $('#game').hide()
-  // $('#new-game').hide()
+  $('#new-game').hide()
   $('#start-game').hide()
+  
 
   //Grab every button, asign it to a click, and put that into the function we put into events,
   //then add the number of the box.
+    $("#b0").click(gameEvents.playerChoose)
     $("#b1").click(gameEvents.playerChoose)
     $("#b2").click(gameEvents.playerChoose)
     $("#b3").click(gameEvents.playerChoose)
@@ -27,7 +29,10 @@ $(() => {
     $("#b6").click(gameEvents.playerChoose)
     $("#b7").click(gameEvents.playerChoose)
     $("#b8").click(gameEvents.playerChoose)
-    $("#b9").click(gameEvents.playerChoose)
+    
+
+    $('#new-game').click(gameEvents.newGame)
+    $('#start-game').click(gameEvents.newGame)
 
   // set event listeners
   $('#sign-up').on('submit', authEvents.onSignUp)
@@ -35,7 +40,7 @@ $(() => {
   $('#change-password').on('submit', authEvents.onChangePassword)
   $('#sign-out').on('click', authEvents.onSignOut)
 
-  // $('#new-game').click(gameEvents.newGame)
+  
 
 // select all boxes inside your flex container
 // and make them listen to your game.event function

@@ -4,11 +4,11 @@ const config  = require('../config')
 const store = require('../store')
 
 
-const signUp = function (formData) {
+const signUp = function (formInfo) {
     return $.ajax({
         url: config.apiUrl + '/sign-up',
         method: 'POST',
-        data: formData
+        data: formInfo
     })
 }  
 

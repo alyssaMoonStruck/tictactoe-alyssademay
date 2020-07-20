@@ -1,78 +1,108 @@
 'use strict'
-const ui = require('./ui')
-const store = require('../store')
-store.choosen = [];
 
+const ui = require('./ui')
+const store = require('../store');
+const api = require('./api');
+
+
+store.choosen = [];
+store.gameId =''
 const playerChoose = function(event) {
     let id  = event.target.id;
     store.choosen.push(id)
+    let result = false 
+    let player = ''
 
     if (store.choosen.length % 2 === 1) {
-            $('#' + id).text("X").addClass("x").unbind('click')
-            checkIfGameWon("X")
+            $('#' + id).text("X").addClass("X").unbind('click')
+            player = "X"
     } else {
         $('#' + id).text("O").addClass("O").unbind('click')
-        checkIfGameWon("O")
+        player = "O"
     } 
+    result = checkIfGameWon(player)
+    let payload = {
+        game: {
+            cell: {
+                index: id.charAt(1),
+                value: player
+            },
+            over: result
+        }
+    }
+    api.updateGame(payload, store.gameId)
+        .then()
+        .catch()
 }
 
-    const checkIfGameWon = function(selected) {
-        if(didYouWin() === true) {
-            ui.showWinMessage(selected)
-        } else if (isDraw() === true) {
-            ui.showDrawMessage()
-        } else {
-            ui.keepTrack(selected)
-        } 
-
-    }
-
-    // const newGame = function() {
-    //     if(didYouWin() === true) {
-    //     } else if (isDraw() === true) {
-    //         $('#game').on('click').empty()
-    //     }
-    // }
+const checkIfGameWon = function(selected) {
+    if(didYouWin() === true) {
+        ui.showWinMessage(selected)
+        return true
+    } else if (isDraw() === true) {
+        ui.showDrawMessage()
+        return true
+    } else {
+        ui.keepTrack(selected)
+        return false
+    } 
+}
+const newGame = function() {
+    api.getGames()
+        .then(ui.updateGamesPlayedSuccess)
+        .catch(ui.updateGamesPlayedFailed)
+    api.startNewGame()
+        .then(ui.startNewGame)
+        .catch(ui.startNewGameFailed)
+}
 
 const didYouWin = function() {
     if(
-        ($('#b1').text() === $('#b2').text()) && 
-        ($('#b2').text() === $('#b3').text()))
+        ($('#b0').text() !== '') &&
+        ($('#b1').text()) && 
+        ($('#b1').text() === $('#b2').text()))
     {
         return true 
     } else if(
-        ($('#b4').text() === $('#b5').text()) && 
-        ($('#b5').text() === $('#b6').text()))
+        ($('#b3').text()  !== '') &&
+        ($('#b3').text() === $('#b4').text()) && 
+        ($('#b4').text() === $('#b5').text()))
     {
         return true
     } else if(
-        ($('#b7').text() === $('#b8').text()) && 
-        ($('#b8').text() === $('#b9').text()))
+        ($('#b6').text()  !== '') &&
+        ($('#b6').text() === $('#b7').text()) && 
+        ($('#b7').text() === $('#b8').text()))
     {
         return true
     } else if(
-        ($('#b1').text() === $('#b4').text()) && 
-        ($('#b4').text() === $('#b7').text()))
+        ($('#b0').text()  !== '') &&
+        ($('#b0').text() === $('#b3').text()) && 
+        ($('#b3').text() === $('#b6').text()))
     {
         return true
     } else if(
-        ($('#b1').text() === $('#b5').text()) && 
-        ($('#b5').text() === $('#b9').text()))
+        ($('#b0').text()  !== '') &&
+        ($('#b0').text() === $('#b4').text()) && 
+        ($('#b4').text() === $('#b8').text()))
     {
         return true
     } else if(
+        ($('#b1').text()  !== '') &&
+        ($('#b1').text() === $('#b6').text()) && 
+        ($('#b6').text() === $('#b7').text()))
+    {
+        return true
+    } else if(
+        ($('#b2').text()  !== '') &&
         ($('#b2').text() === $('#b5').text()) && 
         ($('#b5').text() === $('#b8').text()))
     {
         return true
     } else if(
-        ($('#b3').text() === $('#b6').text()) && 
-        ($('#b6').text() === $('#b9').text()))
-    {
-        return true
-    } else if(
-        ($('#b3').text() === $('#b5').text()) && 
-        ($('#b5').text() === $('#b7').text()))
+        ($('#b2').text()  !== '') &&
+        ($('#b2').text() === $('#b4').text()) && 
+        ($('#b4').text() === $('#b6').text()))
     {
         return true
     } else {
@@ -81,7 +111,7 @@ const didYouWin = function() {
 }
 
 const isDraw = function() {
-    if(store.choosen.length == 9){
+    if(store.choosen.length === 9){
         return true;
     } else {
         return false
@@ -94,7 +124,8 @@ const isDraw = function() {
 module.exports = {
     playerChoose,
     didYouWin,
-    //Another
+    newGame,
+    
 }
 
 

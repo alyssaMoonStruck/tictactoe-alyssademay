@@ -19,6 +19,9 @@ const signInSuccess = function (data) {
     $('#authenticated').show()
     $('#game').show()
     $('#unauthenticated').hide()
+    $('#start-game').show()
+    $('#game').children().hide()
+    $('#game').children().hide()
 
 }
 
@@ -37,6 +40,11 @@ const changePasswordFailure = function (error) {
 const signOutSuccess = function (data) {
     $('form').trigger('reset')
     $('#message').text('Successfully signed out!')
+    $('#unauthenticated').show()
+    $('#authenticated').hide()
+    $('#game').hide()
+    $('#new-game').hide()
+    $('#start-game').hide()
 }
 
 const signOutFailure = function (error) {

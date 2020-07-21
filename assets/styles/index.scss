@@ -2,6 +2,9 @@
 
 $grey: #333;
 
+input{
+    width: -webkit-fill-available;
+}
 
 sup{
     font-style: italic;
@@ -17,9 +20,12 @@ header{
 }
 
 #unauthenticated{
-    margin: auto;
-    width: fit-content;
+    justify-content: center;
+    align-items: center;
     text-align: center;
+    padding: 200px;
+    float: center;
+    
 
 }
 
@@ -54,13 +60,6 @@ header{
     text-align: center;
 }
 
-#unauthenticated {
-    direction: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 0%;
-    
-}
 
 footer {
     border: solid black 1px;
@@ -75,7 +74,9 @@ footer {
     overflow: hidden;
 }
 
-
+.btn btn-primary {
+    margin: 20px;
+}
 
 
 

@@ -12,12 +12,12 @@ const startNewGame = function() {
     })
 }
 
-const updateGame = function(move, id) {
+const updateGame = function(move) {
     return $.ajax({
         headers: {
         Authorization: 'Bearer ' + store.user.token
         },
-        url: config.apiUrl + '/games/' + id,
+        url: config.apiUrl + '/games/' + store.gameId,
         method: 'PATCH',
         data: move
     })

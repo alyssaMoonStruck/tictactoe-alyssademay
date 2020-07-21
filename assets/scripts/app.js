@@ -8,10 +8,14 @@
 const authEvents = require('./auth/events')
 const gameEvents = require('./game/events')
 const store = require('./store')
-store.choosen = []
+
 
 $(() => {
   //set up ui
+    store.gameId = ''
+    store.choosen = []
+
+
   $('#authenticated').hide()
   $('#game').hide()
   $('#new-game').hide()

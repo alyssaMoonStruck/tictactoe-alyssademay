@@ -5,13 +5,12 @@ const store = require('../store');
 const api = require('./api');
 
 
-store.choosen = [];
-store.gameId =''
 const playerChoose = function(event) {
     let id  = event.target.id;
     store.choosen.push(id)
-    let result = false 
-    let player = ''
+
+    let result; 
+    let player;
 
     if (store.choosen.length % 2 === 1) {
             $('#' + id).text("X").addClass("X").unbind('click')
@@ -20,29 +19,35 @@ const playerChoose = function(event) {
         $('#' + id).text("O").addClass("O").unbind('click')
         player = "O"
     } 
+
     result = checkIfGameWon(player)
     let payload = {
         game: {
             cell: {
-                index: id.charAt(1),
+                index: id.charAt(1),  //Used chaAt to grab the number within the box id string
                 value: player
             },
             over: result
         }
     }
-    api.updateGame(payload, store.gameId)
+    api.updateGame(payload)
         .then()
         .catch()
 }
 
+//Return false if game is still going 
+//returns true if game has ended with win or draw
 const checkIfGameWon = function(selected) {
     if(didYouWin() === true) {
+        //Showing whether X or O won by selected
         ui.showWinMessage(selected)
         return true
     } else if (isDraw() === true) {
+        //showing message if draw
         ui.showDrawMessage()
         return true
     } else {
+        //keeping track of who's turn it is
         ui.keepTrack(selected)
         return false
     } 

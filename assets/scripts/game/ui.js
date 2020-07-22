@@ -3,21 +3,21 @@ const store = require ('../store')
 
 
 const showWinMessage = function (selected) {
-    $('#game').children().css("background-color", "red")
-    $('#game').unbind('click')
+    $('#game').children().css("background-color", "purple")
     $('#message').text(selected + " Wins!")
     $('#new-game').show()
 
 }
 
 const showDrawMessage = function() {
+    $('#game').children().css("background-color", "purple")
     $('#message').text("It's A Draw!")
     $('#new-game').show()
 }
 
 const keepTrack = function(selected) {
 if (selected === "X") {
-    $('#message').text('Your Trun O!')
+    $('#message').text('Your Turn O!')
 } else {
     $('#message').text("Your Move X")
 }
@@ -42,7 +42,7 @@ const startNewGameFailed = function() {
 
 const updateGamesPlayedSuccess = function(response) {
     let gamesPlayed = response.games.length
-    $('#score').text( gamesPlayed + ' Games Played')
+    $('#score').text( gamesPlayed + ' Games Played!')
 
 }
 

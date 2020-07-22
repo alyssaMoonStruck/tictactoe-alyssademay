@@ -7,7 +7,7 @@ const signUpSuccess = function (data) {
 }
 
 const signUpFailure = function (error) {
-    $('#message').text('Failed to sign up')
+    $('#message1').text('Failed to sign up')
 }
 
 const signInSuccess = function (data) {
@@ -26,7 +26,7 @@ const signInSuccess = function (data) {
 }
 
 const signInFailure = function (error) {
-    $('#message').text('Failed to sign in')
+    $('#message1').text('Failed to sign in')
 }
 
 const changePasswordSuccess = function (data) {

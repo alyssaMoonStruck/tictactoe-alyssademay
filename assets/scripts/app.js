@@ -24,15 +24,7 @@ $(() => {
 
   //Grab every button, asign it to a click, and put that into the function we put into events,
   //then add the number of the box.
-    $("#b0").click(gameEvents.playerChoose)
-    $("#b1").click(gameEvents.playerChoose)
-    $("#b2").click(gameEvents.playerChoose)
-    $("#b3").click(gameEvents.playerChoose)
-    $("#b4").click(gameEvents.playerChoose)
-    $("#b5").click(gameEvents.playerChoose)
-    $("#b6").click(gameEvents.playerChoose)
-    $("#b7").click(gameEvents.playerChoose)
-    $("#b8").click(gameEvents.playerChoose)
+  $('#game').children().on('click',gameEvents.playerChoose)
     
 
     $('#new-game').click(gameEvents.newGame)

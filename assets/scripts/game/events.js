@@ -12,14 +12,18 @@ const playerChoose = function(event) {
     let result; 
     let player;
 
+
+    if(didYouWin() === true || isDraw() === true ||event.target.innerText !== ''){
+        return
+    }
+
     if (store.choosen.length % 2 === 1) {
-            $('#' + id).text("X").addClass("X").unbind('click')
+            $('#' + id).text("X").addClass("X")
             player = "X"
     } else {
-        $('#' + id).text("O").addClass("O").unbind('click')
+        $('#' + id).text("O").addClass("O")
         player = "O"
     } 
-
     result = checkIfGameWon(player)
     let payload = {
         game: {
@@ -35,8 +39,6 @@ const playerChoose = function(event) {
         .catch()
 }
 
-//Return false if game is still going 
-//returns true if game has ended with win or draw
 const checkIfGameWon = function(selected) {
     if(didYouWin() === true) {
         //Showing whether X or O won by selected
@@ -64,7 +66,7 @@ const newGame = function() {
 const didYouWin = function() {
     if(
         ($('#b0').text() !== '') &&
-        ($('#b1').text()) && 
+        ($('#b1').text()) === $('#b0').text() && 
         ($('#b1').text() === $('#b2').text()))
     {
         return true 
@@ -87,15 +89,15 @@ const didYouWin = function() {
     {
         return true
     } else if(
-        ($('#b0').text()  !== '') &&
+        ($('#b4').text()  !== '') &&
         ($('#b0').text() === $('#b4').text()) && 
         ($('#b4').text() === $('#b8').text()))
     {
         return true
     } else if(
         ($('#b1').text()  !== '') &&
-        ($('#b1').text() === $('#b6').text()) && 
-        ($('#b6').text() === $('#b7').text()))
+        ($('#b1').text() === $('#b4').text()) && 
+        ($('#b4').text() === $('#b7').text()))
     {
         return true
     } else if(
@@ -105,7 +107,7 @@ const didYouWin = function() {
     {
         return true
     } else if(
-        ($('#b2').text()  !== '') &&
+        ($('#b6').text()  !== '') &&
         ($('#b2').text() === $('#b4').text()) && 
         ($('#b4').text() === $('#b6').text()))
     {
@@ -122,8 +124,6 @@ const isDraw = function() {
         return false
     } 
 }
-
-
 
 
 module.exports = {

@@ -2,9 +2,7 @@
 
 $grey: #333;
 
-input{
-    width: -webkit-fill-available;
-}
+
 
 sup{
     font-style: italic;
@@ -25,11 +23,11 @@ header{
     text-align: center;
     padding: 200px;
     float: center;
-    
+
 
 }
 
-.game {
+#game {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
@@ -37,7 +35,7 @@ header{
     list-style: none;
     margin: auto;
     width: 40%;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     div{
         border: solid black 1px;
         padding: 5px;
@@ -58,6 +56,14 @@ header{
 
 #authenticated {
     text-align: center;
+
+}
+
+#start-game {
+    justify-content: center;
+    padding: 200px;
+    float: center;
+    
 }
 
 
@@ -72,22 +78,15 @@ footer {
     height: 100px;
     width: 100%;
     overflow: hidden;
+    //padding: 20px;
+}
+#pass {
+    width: 20%;
+}
+#pass1 {
+    width: 20%;
+}
+#score {
+    font-weight: bold;
 }
 
-.btn btn-primary {
-    margin: 20px;
-}
-
-
-
-
-
-.X {
-    background: linear-gradient(90deg, rgba(236,168,236,1) 0%, rgba(212,168,204,0.49855907780979825) 
-    2%, rgba(156,111,168,0.2334293948126801) 49%, rgba(2,0,36,1) 100%);
-}
-
-.O {
-    background: linear-gradient(90deg, rgba(236,168,236,1) 0%, rgba(212,168,204,0.49855907780979825) 
-    2%, rgba(156,111,168,0.2334293948126801) 49%, rgba(2,0,36,1) 100%);
-}

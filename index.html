@@ -20,12 +20,12 @@
   </header>
 
   <div id="unauthenticated">
-
+    <p id="message1"></p>
     <form id="sign-up">
       <input name="credentials[email]" placeholder="Email" type="text">
       <input name="credentials[password]" placeholder="Password" type="password">
       <input name="credentials[password_confirmation]" placeholder="Confirm Password" type="password">
-      <button type="submit" class="btn btn-primary">Sign Up</button>
+      <button type="submit">Sign Up</button>
     </form>
 
 <br>
@@ -33,7 +33,7 @@
     <form id="sign-in">
       <input name="credentials[email]" placeholder="Email" type="text">
       <input name="credentials[password]" placeholder="Password" type="password">
-      <button type="submit" class="btn btn-primary">Sign In</button>
+      <button type="submit">Sign In</button>
     </form>
   </div>
 
@@ -42,7 +42,7 @@
   <div id="authenticated">
     <p id="score"></p>
     <p id="message"></p>
-    <div id="game" class="game">
+    <div id="game" >
       <div id="b0" class="col-4 col-md-4"></div>
       <div id="b1" class="col-4 col-md-4"></div>
       <div id="b2" class="col-4 col-md-4"></div>
@@ -55,20 +55,22 @@
     </div>
 
     <div id="start-game">
-      <button id="button" type="click">Start New Game</button>
+      <button id="button" class="btn btn-primary">Start New Game</button>
     </div>
   
     <div id="new-game">
-      <button id="button1" type="click">Play New Game</button>
+      <button id="button1" class="btn btn-secondary">Play New Game</button>
     </div>
 
 
     <footer >
       <form id="change-password">
-        <input name="passwords[old]" placeholder="Old Password" type="password">
-        <input name="passwords[new]" placeholder="New Password" type="password">
+        <input id="pass" name="passwords[old]" placeholder="Old Password" type="password">
+        <input id="pass1"name="passwords[new]" placeholder="New Password" type="password">
         <button type="submit">Change Password</button>
       </form>
+
+      <br>
 
       <form id="sign-out">
         <button type="click">Sign Out</button>

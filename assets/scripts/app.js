@@ -36,30 +36,6 @@ $(() => {
   $('#change-password').on('submit', authEvents.onChangePassword)
   $('#sign-out').on('click', authEvents.onSignOut)
 
-  
 
-// select all boxes inside your flex container
-// and make them listen to your game.event function
 
 })
-
-//3
-    //store it 
-    //if store.choosen %2 == 1
-      // mark the div as "x" class // Jquery.addclass https://www.w3schools.com/jquery/jquery_css_classes.asp
-    //else
-      // mark the div as "o" class
-  //else
-    //do nothing
-  // 3.b Make the x and o class
-
-//4 Make the nine divs listen to game.events
-  // literally right above this same file
-
-// 5 Fix sign up page
-  // you should know how to do this by now
-
-// 6 make everything pretty
-  // have fun with this part
-
-//7 MAKE THE COMPUTER TAKE A TURN

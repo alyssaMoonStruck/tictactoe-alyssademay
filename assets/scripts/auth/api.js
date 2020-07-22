@@ -14,7 +14,6 @@ const signUp = function (formInfo) {
 
 const signIn = function (formInfo) {
 
-    //return fetch(config.apiUrl + '/sign-in', {method:"POST", body: JSON.parse(formInfo) });
 
 
     return $.ajax({

@@ -47,6 +47,8 @@ I plan to carefully study and break down all issues that arise, giving myself ti
 
 ## Game Wireframe
 
+[Wireframe](./wireframe.png) 
+
 ## Unsolved Problems
 None.
 

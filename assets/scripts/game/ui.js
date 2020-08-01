@@ -47,9 +47,12 @@ const updateGamesPlayedSuccess = function(response) {
 }
 
 const updateGamesPlayedFailed = function(error) {
-        $('#score').text('Error Loading Games')
+    $('#score').text('Error Loading Games')
 }
 
+const pleaseDontTouchMeThere = function () {
+    $('#message').text('Please do not touch me!')
+}
 
 
 
@@ -60,6 +63,7 @@ module.exports = {
     startNewGame,
     startNewGameFailed,
     updateGamesPlayedSuccess,
-    updateGamesPlayedFailed
+    updateGamesPlayedFailed,
+    pleaseDontTouchMeThere
     
 }

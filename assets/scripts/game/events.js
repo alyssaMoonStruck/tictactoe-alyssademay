@@ -12,8 +12,13 @@ const playerChoose = function(event) {
     let result; 
     let player;
 
+    //Prevents 
+    if(didYouWin() === true || isDraw() === true){
+        return
+    }
 
-    if(didYouWin() === true || isDraw() === true ||event.target.innerText !== ''){
+    if (event.target.innerText !== '') {
+        ui.pleaseDontTouchMeThere()
         return
     }
 

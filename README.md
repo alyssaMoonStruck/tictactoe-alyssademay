@@ -7,7 +7,7 @@ This is a fun Tic-Tac-Toe games where a user can play against himself!
 * [Tic-Tac-Toe Wikipedia ](https://en.wikipedia.org/wiki/Tic-tac-toe) 
 
 * [Game requirements](https://git.generalassemb.ly/ga-wdi-boston/game-project/blob/master/requirements.md)
-[Tic-Tac-Toe Wikipedia ](https://en.wikipedia.org/wiki/Tic-tac-toe)
+
 
 
 

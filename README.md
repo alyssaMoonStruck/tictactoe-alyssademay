@@ -50,6 +50,7 @@ I plan to carefully study and break down all issues that arise, giving myself ti
 [Wireframe](./wireframe.png) 
 
 ## Unsolved Problems
+* Could work on better screen responsiveness.
 * Would like to add a multiplayer setting.
 * Would like player to be able to play against CPU.
 * Would like to be able to resume unfinished game.

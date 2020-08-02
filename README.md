@@ -34,7 +34,7 @@ I plan to carefully study and break down all issues that arise, giving myself ti
 * As a user I want to be notified win either X or O has One, or if there 
  was a draw. 
 * As a user I want to be able to start a new Game.
-*As a user I want to be able to change my password.
+* As a user I want to be able to change my password.
 * As a user I want to be able to sign out.
 
 ## Technologies Used

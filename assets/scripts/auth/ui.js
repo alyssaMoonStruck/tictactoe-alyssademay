@@ -2,6 +2,7 @@
 const store = require('../store')
 
 const signUpSuccess = function (data) {
+    $('form').trigger('reset')
     $('#message1').text('Successfully signed up!')
     store.user = data.user
 }
@@ -35,7 +36,6 @@ const changePasswordSuccess = function (data) {
 }
 
 const changePasswordFailure = function (error) {
-    $('form').trigger('reset')
     $('#message').text('Failed to change password')
 }
 

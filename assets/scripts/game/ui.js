@@ -50,8 +50,12 @@ const updateGamesPlayedFailed = function(error) {
     $('#score').text('Error Loading Games')
 }
 
-const pleaseDontTouchMeThere = function () {
-    $('#message').text('Please do not touch me!')
+const tryDifferentSquare = function () {
+    $('#message').text('This square has already been selected!')
+}
+
+const tryDifferentSquareDW = function () {
+    $('#message').text('Board full! How about a new game?')
 }
 
 
@@ -64,6 +68,7 @@ module.exports = {
     startNewGameFailed,
     updateGamesPlayedSuccess,
     updateGamesPlayedFailed,
-    pleaseDontTouchMeThere
+    tryDifferentSquare,
+    tryDifferentSquareDW
     
 }

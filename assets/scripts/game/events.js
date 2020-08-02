@@ -1,42 +1,48 @@
 'use strict'
-
 const ui = require('./ui')
 const store = require('../store');
 const api = require('./api');
-
+let gameOver = false;
 
 const playerChoose = function(event) {
     let id  = event.target.id;
-    store.choosen.push(id)
-
-    let result; 
     let player;
 
     //Prevents 
-    if(didYouWin() === true || isDraw() === true){
+    if(didYouWin() === true || (isDraw() === true && gameOver)) {
+        ui.tryDifferentSquareDW();
         return
     }
 
+    //Did another player already choose that square?
     if (event.target.innerText !== '') {
-        ui.pleaseDontTouchMeThere()
+        ui.tryDifferentSquare()
         return
     }
 
+    store.choosen.push(id)
+    
+    //Whos turn is it?
     if (store.choosen.length % 2 === 1) {
-            $('#' + id).text("X").addClass("X")
-            player = "X"
+        console.log("X")
+        $('#' + id).text("X").addClass("X")
+        player = "X"
     } else {
+        console.log("O")
         $('#' + id).text("O").addClass("O")
         player = "O"
-    } 
-    result = checkIfGameWon(player)
+    }
+
+    //Check the board
+    gameOver =  checkIfGameWon(player)
+    console.log(gameOver)
     let payload = {
         game: {
             cell: {
                 index: id.charAt(1),  //Used chaAt to grab the number within the box id string
                 value: player
             },
-            over: result
+            over: gameOver
         }
     }
     api.updateGame(payload)
@@ -45,21 +51,22 @@ const playerChoose = function(event) {
 }
 
 const checkIfGameWon = function(selected) {
-    if(didYouWin() === true) {
-        //Showing whether X or O won by selected
+    if(didYouWin() === true) 
+    {
         ui.showWinMessage(selected)
         return true
-    } else if (isDraw() === true) {
-        //showing message if draw
-        ui.showDrawMessage()
+    } 
+    else if (isDraw() === true)
+    {
         return true
-    } else {
-        //keeping track of who's turn it is
+    } 
+    else {
         ui.keepTrack(selected)
         return false
     } 
 }
 const newGame = function() {
+    store.choosen = []
     api.getGames()
         .then(ui.updateGamesPlayedSuccess)
         .catch(ui.updateGamesPlayedFailed)
@@ -123,9 +130,15 @@ const didYouWin = function() {
 }
 
 const isDraw = function() {
-    if(store.choosen.length === 9){
+    console.log(store.choosen.length)
+    if(store.choosen.length === 9)
+    {
+        ui.showDrawMessage()
+        console.log("?")
         return true;
-    } else {
+    }
+    else 
+    {
         return false
     } 
 }

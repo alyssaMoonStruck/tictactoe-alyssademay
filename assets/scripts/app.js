@@ -28,7 +28,7 @@ $(() => {
     
 
     $('#new-game').click(gameEvents.newGame)
-    $('#start-game').click(gameEvents.newGame)
+    $('#start').click(gameEvents.newGame)
 
   // set event listeners
   $('#sign-up').on('submit', authEvents.onSignUp)

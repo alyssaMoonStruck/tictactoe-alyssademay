@@ -24,18 +24,15 @@ const playerChoose = function(event) {
     
     //Whos turn is it?
     if (store.choosen.length % 2 === 1) {
-        console.log("X")
         $('#' + id).text("X").addClass("X")
         player = "X"
     } else {
-        console.log("O")
         $('#' + id).text("O").addClass("O")
         player = "O"
     }
 
     //Check the board
     gameOver =  checkIfGameWon(player)
-    console.log(gameOver)
     let payload = {
         game: {
             cell: {
@@ -130,11 +127,9 @@ const didYouWin = function() {
 }
 
 const isDraw = function() {
-    console.log(store.choosen.length)
     if(store.choosen.length === 9)
     {
         ui.showDrawMessage()
-        console.log("?")
         return true;
     }
     else 

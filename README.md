@@ -17,7 +17,7 @@ This was my very first front-end project, so I took great pride in planning this
 
 Finally I will begin working on my code, first setting up all folders that will communicate with the server for the users email and password and make sure that they are stored. My plan is to then use BootStrap to make my GameBoard, as well as add in all buttons and input forms inside of HTML for a bit of structuring. I plan on using different pages to keep all authentication separate and from the actual game as that will keep all current screens organized and uncluttered. I plan on using JQuery for all Event Listeners, For Loops to iterate through win/lose/draw scenarios, and UI messages for displaying all success and or failure progress.
 
-I plan to carefully study and break down all issues that arise, giving myself time to work through each one and use internet resources to help me problem solve and debug for future projects. To prevent code loss I plane to commit and pucs frequently, and in the end, make sure that my console is clear of any logs and errors.
+I plan to carefully study and break down all issues that arise, giving myself time to work through each one and use internet resources to help me problem solve and debug for future projects. To prevent code loss I plan to commit and push frequently, and in the end, make sure that my console is clear of any logs and errors.
 ## User Stories
 
 * As a user I want to be able to sign up to the game and have my email 
@@ -25,13 +25,13 @@ I plan to carefully study and break down all issues that arise, giving myself ti
 * As a user I want my password to be concealed.
 * As a user I would like to be able to log in before the game is 
   displayed.
-* As a user I want to be able to sign into the game.
+* As a user I want to be able to sign in to the game.
 * As a user I want to be able to start a new game
 * As a user I want to be able to be able to click on spaces, alternating 
   my marks from X to O.
 * As a user I would like to be unable to click on squares that have 
   already been selected, and be notified if I try clicking that square again.
-* As a user I want to be notified win either X or O has One, or if there 
+* As a user I want to be notified win either X or O has won, or if there 
  was a draw. 
 * As a user I want to be able to start a new Game.
 * As a user I want to be able to change my password.

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Tic Tac Toe</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body>
+  <header>
+    <h1>Tic-Tac-Toe</h1>
+    <sup>-By Alyssa</sup>
+  </header>
+
+  <div id="unauthenticated">
+    <p id="message1"></p>
+    <form id="sign-up">
+      <input name="credentials[email]" placeholder="Email" type="text">
+      <input name="credentials[password]" placeholder="Password" type="password">
+      <input name="credentials[password_confirmation]" placeholder="Confirm Password" type="password">
+      <button type="submit">Sign Up</button>
+    </form>
+
+<br>
+
+    <form id="sign-in">
+      <input name="credentials[email]" placeholder="Email" type="text">
+      <input name="credentials[password]" placeholder="Password" type="password">
+      <button type="submit">Sign In</button>
+    </form>
+  </div>
+
+
+
+  <div id="authenticated">
+    <p id="score"></p>
+    <p id="message"></p>
+    <div id="game" >
+      <div id="b0" class="col-4 col-md-4"></div>
+      <div id="b1" class="col-4 col-md-4"></div>
+      <div id="b2" class="col-4 col-md-4"></div>
+      <div id="b3" class="col-4 col-md-4"></div>
+      <div id="b4" class="col-4 col-md-4"></div>
+      <div id="b5" class="col-4 col-md-4"></div>
+      <div id="b6" class="col-4 col-md-4"></div>
+      <div id="b7" class="col-4 col-md-4"></div>
+      <div id="b8" class="col-4 col-md-4"></div>
+    </div>
+
+    <div id="start-game">
+      <button id="start" class="btn btn-primary">Start New Game</button>
+    </div>
+  
+    <div id="new-game">
+      <button id="button1">Play New Game</button>
+    </div>
+
+
+    <footer >
+      <form id="change-password">
+        <input id="pass" name="passwords[old]" placeholder="Old Password" type="password">
+        <input id="pass1"name="passwords[new]" placeholder="New Password" type="password">
+        <button type="submit">Change Password</button>
+      </form>
+
+      <br>
+
+      <form id="sign-out">
+        <button type="click">Sign Out</button>
+      </form>
+
+    </footer>
+  </div>
+
+
+</body>
+
+</html>
